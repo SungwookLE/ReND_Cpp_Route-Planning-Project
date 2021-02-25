@@ -28,6 +28,9 @@ class RoutePlanner {
 
     float distance = 0.0f;
     RouteModel &m_Model;
+    
+    // Define Step Cost vale as 1.0
+    float step_cost = 1.0;
 };
 
 #endif
