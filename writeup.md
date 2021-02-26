@@ -232,9 +232,9 @@ From start_node to end_node, this while loop will be executed until finding the 
 
 ## 3. CONCLUSION
 Results is as below. The start node is (20, 50) and end node is (50, 150).
-![image[NOTE]](./image.png)
-Orang Line was the `FinalPath` that was returned this code.  
-The total distance was 248.5 meters.  
+![image[NOTE]](./image.png)  
+Orange Line was the `FinalPath` that was returned this code.  
+The total distance was 4248.5 meters.  
 
 ## DISCUSSION  
 It would be fun to make this program as navigator with `Get_Latitude,long...`,
