@@ -56,17 +56,26 @@ int main(int argc, const char **argv)
     // user input for these values using std::cin. Pass the user input to the
     // RoutePlanner object below in place of 10, 10, 90, 90.
     float start_x, start_y, end_x, end_y;
-    std::string st_start_x,st_start_y, st_end_x, st_end_y;
+    std::string line, temp_str;
+    std::vector<float> points;
 
     std::cout << std::endl<< "**INSERT "<<  std::endl;
     std:: cout << " start_x, start_y, end_x, end_y: ";
 
-    std::cin >> st_start_x >> st_start_y>>  st_end_x>>  st_end_y;
+    std::getline(std::cin, line);
+    
+    std::replace(line.begin(), line.end(), ',',' ');
+    std::istringstream linestream(line);
+    //std::cout << line << std::endl;
 
-    start_x = std::stof(st_start_x);
-    start_y = std::stof(st_start_y);
-    end_x = std::stof(st_end_x);
-    end_y = std::stof(st_end_y);
+    while(linestream >> temp_str){
+        points.push_back(std::stof(temp_str));
+    }
+
+    start_x = points[0];
+    start_y = points[1];
+    end_x = points[2];
+    end_y = points[3];
 
     std::cout << std::endl<< "**CHECK "<<  std::endl;
     std::cout << " start_x: " << start_x << std::endl;
@@ -85,8 +94,8 @@ int main(int argc, const char **argv)
 
     // Render results of search.
     Render render{model};
-
-    auto display = io2d::output_surface{400, 400, io2d::format::argb32, io2d::scaling::none, io2d::refresh_style::fixed, 30};
+    
+    auto display = io2d::output_surface{500, 500, io2d::format::argb32, io2d::scaling::uniform, io2d::refresh_style::as_fast_as_possible, 30};
     display.size_change_callback([](io2d::output_surface& surface){
         surface.dimensions(surface.display_dimensions());
     });
