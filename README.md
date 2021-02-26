@@ -1,7 +1,10 @@
 # Route Planning Project
+## Project Writeup  
+> Author: SungwookLE(joker1251@naver.com)  
+> DATE: '21.2/26  
+> Check the [writeup.md](./writeup.md) for understanding how to implement this project.
 
 This repo contains the starter code for the Route Planning project.
-
 <img src="map.png" width="600" height="450" />
 
 ## Cloning
